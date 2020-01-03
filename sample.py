@@ -3,6 +3,9 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
+import waymo_open_dataset.dataset_pb2
+import waymo_open_dataset.label_pb2
+import waymo_open_dataset.utils
 
 if __name__ == '__main__':
 
