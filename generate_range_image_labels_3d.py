@@ -18,5 +18,14 @@ if __name__ == "__main__":
 
     # read in the tfrecord data file
     datafile = WaymoDataFileReader(data_file_path)
-
     print(datafile)
+
+    for frame in datafile:
+        # we are only interested in the top laser and front camera
+        # get top lidar info
+        laser_name = dataset_pb2.LaserName.TOP  # lidar name for top lidar from the dataset
+        laser = utils.get(frame.lasers, laser_name)
+        laser_calibration = utils.get(frame.context.laser_calibrations, laser_name)
+
+
+        print(laser_calibration)
